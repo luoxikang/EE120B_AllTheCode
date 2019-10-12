@@ -76,26 +76,27 @@ KeyState Stick(KeyState State){
         Check();
     }
 
-    int Record(char Key){
+    
+}
+
+void Record(char Key){
 	unsigned char i = 0;
         while (i < MAXNUM-1){
             KeyQueue[i+1] = KeyQueue[i];
 	    i++;
         }
         KeyQueue[0] = Key;
-	return 1;
     }
 
-    void Check(void){
-            if (KeyQueue[0] == 'X' && KeyQueue[1] == 'Y' && KeyQueue[2] == 'X' && KeyQueue[3] == '#' ){
-                PORTB = 0x01; // Unlock
-            } else if (KeyQueue[0] = 'B')       
-            {
-                PORTB = 0x00; // Lock
-            } else
-            {
-                ////// 
-            }
-                     
-    }
+void Check(void){
+        if (KeyQueue[0] == 'X' && KeyQueue[1] == 'Y' && KeyQueue[2] == 'X' && KeyQueue[3] == '#' ){
+            PORTB = 0x01; // Unlock
+        } else if (KeyQueue[0] = 'B')       
+        {
+            PORTB = 0x00; // Lock
+        } else
+        {
+            ////// 
+        }
+                    
 }
