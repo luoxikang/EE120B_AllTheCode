@@ -12,14 +12,14 @@ KeyState Stick(KeyState State);
 char KeyQueue[MAXNUM] = {0};
 void Record(char key);
 void Check();
+KeyState State = Start;
 
 int main(void){
     DDRA = 0x00; DDRB = 0xFF;
     PORTA = 0xFF; PORTB = 0x00;
 
     while(1){
-        KeyState State = Start;
-        State = Stick(State);
+	State = Stick(State);
     }
 
     return 1;
